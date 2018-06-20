@@ -1,3 +1,6 @@
+
+
+
 package de.tub.ise.as.td.entity;
 
 import java.io.Serializable;
@@ -15,28 +18,42 @@ public class User implements Serializable {
 	@GeneratedValue
 	int id;
 	String name;
-	String ding;
+	int age;
+	String sternzeichen;
+	String studiengang;
 	
 	public User() {
 		super();
 	}
 	
-	public User(String name) {
+	public User(String name, int age, String sternzeichen, String studiengang) {
 		this.name = name;
+		this.age = age;
+		this.sternzeichen = sternzeichen;
+		this.studiengang = studiengang;
 	}
 	
-	public User(String name, String ding) {
-		this.name = name;
-		this.ding = ding;
-	}
 	
-	public String getDing() {
-		return this.ding;
-	}
-	public void setDing(String ding) {
-		this.ding = ding;
-	}
 	
+	
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getStudiengang() {
+		return studiengang;
+	}
+	public void setStudiengang(String studiengang) {
+		this.studiengang = studiengang;
+	}
+	public String getSternzeichen() {
+		return sternzeichen;
+	}
+	public void setSternzeichen(String sternzeichen) {
+		this.sternzeichen = sternzeichen;
+	}
 	public int getId() {
 		return id;
 	}

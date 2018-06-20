@@ -8,19 +8,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import de.tub.ise.as.td.entity.User;
+import de.tub.ise.as.td.entity.Post;
 
 @Stateless
-public class UserManagement {
+public class PostManagement {
 	
 	@PersistenceContext
 	EntityManager em;
 	
 	@EJB
-	UserInit userInit;
+	PostInit postInit;
 	
-	public List<User> getUsers() {
-		TypedQuery<User> query = em.createQuery("SELECT u FROM User u", User.class);
+	public List<Post> getPosts() {
+		TypedQuery<Post> query = em.createQuery("SELECT p FROM Post p", Post.class);
 		return query.getResultList();
 	}
 	

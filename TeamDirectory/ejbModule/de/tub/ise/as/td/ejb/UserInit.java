@@ -1,5 +1,8 @@
 package de.tub.ise.as.td.ejb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -16,11 +19,45 @@ public class UserInit {
 
 	@PostConstruct
 	public void ensureUsersExist() {
-		User admin = new User("Superuser");
+		
+		List<User> userList = new ArrayList<>();
+		
+		
+		User admin = new User("Markus", 19, "Löwe aka Maschine", "Wirtschaftsinformatik");
 		em.persist(admin);
-		admin = new User("Tai");
+		userList.add(admin);
+		admin = new User("Dennis", 18, "Skorpion aka SPD", "Wirtschaftsinformatik");
 		em.persist(admin);
-		admin = new User("Dennis", "kleinesDing");
+		userList.add(admin);
+		admin = new User("Chris", 21, "Löwe", "Wirtschaftsinformatik");
 		em.persist(admin);
+		userList.add(admin);
+		admin = new User("Carloss", 32, "Schütze", "Wirtschaftsinformatik");
+		em.persist(admin);
+		userList.add(admin);
+		
+		
+		System.out.println(toString(userList));
+		
+	}
+	
+	
+	public String toString(List<User> userList) {
+		StringBuffer ausgabe = new StringBuffer();
+		
+		for(User p : userList) {
+			ausgabe.append("ID: " + p.getAge() + 
+					" Name: " + p.getName() + 
+					" Alter: " + p.getAge() + 
+					" Sternz.: " + p.getSternzeichen() + 
+					" Studieng.: " + p.getStudiengang() + 
+					"\n");
+		}
+		
+		return ausgabe.toString();
+	}
+	
+	public String done() {
+		return "-----------------------------------------------------------------------";
 	}
 }
