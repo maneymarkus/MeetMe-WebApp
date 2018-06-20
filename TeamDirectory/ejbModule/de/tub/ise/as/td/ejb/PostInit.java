@@ -1,3 +1,9 @@
+//----------------------------------------------------
+// 20.06.2018 - Carloss
+// Erstellen von Standardbenutzerdaten laut Vorgabe
+// Hinzufügen zur DB
+// "toString"-Methode (zu Testzwecken)
+
 package de.tub.ise.as.td.ejb;
 
 import java.util.ArrayList;
@@ -62,3 +68,6 @@ public class PostInit {
 		return "-----------------------------------------------------------------------";
 	}
 }
+
+
+//20.06.2018 - Carloss ENDE--------------------------------------------

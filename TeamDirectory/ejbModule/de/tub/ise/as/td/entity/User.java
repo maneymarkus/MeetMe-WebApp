@@ -1,4 +1,6 @@
-
+//----------------------------------------------------
+// 20.06.2018 - Carloss
+// Instanzvariablen, Getter, Setter, Constructor
 
 
 package de.tub.ise.as.td.entity;
@@ -68,3 +70,6 @@ public class User implements Serializable {
 	}
 	
 }
+
+
+//20.06.2018 - Carloss ENDE--------------------------------------------------------

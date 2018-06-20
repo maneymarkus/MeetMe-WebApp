@@ -1,3 +1,7 @@
+//----------------------------------------------------
+// 20.06.2018 - Carloss
+// War bereits so vorgegeben - KEINE Änderungen
+
 package de.tub.ise.as.td.ejb;
 
 import java.util.List;
@@ -25,3 +29,7 @@ public class UserManagement {
 	}
 	
 }
+
+
+
+//20.06.2018 - Carloss ENDE------------------------------------------------

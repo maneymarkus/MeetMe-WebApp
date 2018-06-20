@@ -1,3 +1,7 @@
+//----------------------------------------------------
+// 20.06.2018 - Carloss
+// Nach Vorgabe von "UserManagement"
+
 package de.tub.ise.as.td.ejb;
 
 import java.util.List;
@@ -25,3 +29,6 @@ public class PostManagement {
 	}
 	
 }
+
+
+//20.06.2018 - Carloss ENDE--------------------------------------------------
