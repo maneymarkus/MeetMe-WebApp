@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Home_Style.css">
     <link rel="icon" href="Logo-MockUp.png" type="image/png" sizes="16x16">
+    <script type="text/javascript" src="./home.js" async></script>
     <title>Home</title>
 </head>
-<body style="text-align: center" background="color: aqua">
+<body style="text-align: center; background-color:aqua">
     <img src="Logo-MockUp.png">
     <h1>MeetMe, jetzt auch in deinem Browser!</h1>
-    <a id="user_c" href="User.html"><img  src="Dennis_Profilbild.jpg" class="zoom"></a>
-    <a id="user_d" href="User.html"><img  src="Dennis_Profilbild.jpg" class="zoom"></a>
-    <a id="user_m" href="User.html"><img  src="Dennis_Profilbild.jpg" class="zoom"></a>
-    <a id="user_p" href="User.html"><img  src="Dennis_Profilbild.jpg" class="zoom"></a>
+    <button id="user_m" onclick="getUserM()" style="background:transparent; border:none"><img  src="Dennis_Profilbild.jpg" class="zoom"></button>
+    <button id="user_d" onclick="getUserD()" style="background:transparent; border:none"><img  src="Dennis_Profilbild.jpg" class="zoom"></button>
+    <button id="user_c" onclick="getUserC()" style="background:transparent; border:none"><img  src="Chris_Profilbild.jpg" class="zoom"></button>
+    <button id="user_p" onclick="getUserP()" style="background:transparent; border:none"><img  src="Dennis_Profilbild.jpg" class="zoom"></button>
 </body>
 </html>
