@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // 20.06.2018 - Carloss
-// War bereits so vorgegeben - KEINE Änderungen
+// War bereits so vorgegeben - KEINE Ã„nderungen
 
 package de.tub.ise.as.td.ejb;
 
@@ -26,6 +26,12 @@ public class UserManagement {
 	public List<User> getUsers() {
 		TypedQuery<User> query = em.createQuery("SELECT u FROM User u", User.class);
 		return query.getResultList();
+	}
+	
+	// 21.06. von Chris - Methode zum Filtern nach Usern
+	public User getUser(String name) {
+		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.name = '" + name + "'", User.class);
+		return query.getSingleResult();
 	}
 	
 }
