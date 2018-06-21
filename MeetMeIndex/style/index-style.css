@@ -1,0 +1,175 @@
+*, button {
+    box-sizing: border-box;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+html {
+    min-height: 100%;
+    font-size: 2em;
+    background-color: white;
+}
+
+body {
+    height: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 65%;
+    text-align: center;
+}
+
+.wrapper path {
+    fill: transparent;
+}
+
+.wrapper .intro {
+    margin-top: -25vw;
+    font-size: 45px;
+    transform: scale(1.5, 1.5);
+    margin-bottom: 3em;
+}
+
+.show-friends {
+    background: dodgerblue;
+    border-radius: 10px;
+    border: none;
+    padding: 0.3em 0.5em;
+    position: relative;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    top: 0;
+    left: 0;
+}
+
+.show-friends:hover {
+    background: royalblue;
+    cursor: pointer;
+}
+
+.show-friends:active {
+    box-shadow: 2px 2px 3px black inset;
+    top: 0px;
+    left: 0px;
+}
+
+.friends {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 3em;
+    padding-bottom: 3em;
+    display: none;
+    overflow: auto;
+}
+
+.friends-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    height: auto;
+}
+
+.friends.showing-friends {
+    display: block;
+}
+
+.friends .close {
+    position: fixed;
+    right: 0.6em;
+    top: 0.2em;
+    font-size: 2em;
+    padding: 0.3em;
+    z-index: 10;
+    color: white;
+}
+
+.friends .friend-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.friends img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+.friends div span {
+    position: absolute;
+    bottom: 0.5em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: white;
+}
+
+.friends .friend-container:hover {
+    cursor: pointer;
+}
+
+.friend-container:hover span {
+    color: black;
+}
+
+.friends span.name {
+    left: 25%;
+}
+
+.friends span.age {
+    left: 90%;
+}
+
+.friends .close:hover {
+    color: darkred;
+    cursor: pointer;
+}
+
+.friends .fallback {
+    display: none;
+    color: red;
+}
+
+@media screen and (min-width: 600px) {
+
+}
+
+@media screen and (min-width: 960px) {
+    .friends-wrapper {
+        max-width: 700px;
+    }
+
+    .friend-container:nth-child(2n+1) {
+        margin-right: 2em;
+    }
+
+    .friend-container {
+        margin-bottom: 3em !important;
+    }
+
+    .friend-container:nth-child(n+2) {
+        margin-bottom: 0;
+    }
+
+    .friends {
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1500px) {
+
+}
