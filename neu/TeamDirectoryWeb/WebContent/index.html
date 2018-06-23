@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="icon" href="./images/logo.jpg" type="image/png" sizes="16x16">
+
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./style/index-style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script/indexScript.js" async></script>
+
+    <!--[if lt IE 9]>
+        <script src="./script/html5shiv.js" async></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="intro">
+            <svg viewBox="0 0 500 300">
+                <path id="curve" d="M 0 300 C 200 250 250 250 500 300" />
+                <text x="25">
+                    <textPath xlink:href="#curve">
+                        Welcome to MeetMe
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+
+        <p>Choose a friend:</p>
+        <button class="show-friends">Show me!</button>
+
+        <div class="friends">
+
+            <span class="close">X</span>
+
+            <div class="friends-wrapper">
+                <div class="friend-container friend-1">
+                    <a href="./user.html">
+                        <img src="./images/friend1.jpg" alt="first friend"/>
+                        <span class="name">Peter</span>
+                        <span class="age">32</span>
+                        <span style="display: none;" class="user-id">1</span>
+                    </a>
+                </div>
+
+                <div class="friend-container friend-2">
+                    <a href="./user.html">
+                        <img src="./images/friend1.jpg" alt="first friend"/>
+                        <span class="name">Markus</span>
+                        <span class="age">19</span>
+                        <span style="display: none;" class="user-id">123456789</span>
+                    </a>
+                </div>
+
+                <div class="friend-container friend-3">
+                    <a href="./user.html">
+                        <img src="./images/friend1.jpg" alt="first friend"/>
+                        <span class="name">Markus</span>
+                        <span class="age">19</span>
+                        <span style="display: none;" class="user-id">123456789</span>
+                    </a>
+                </div>
+
+                <div class="friend-container friend-4">
+                    <a href="./user.html">
+                        <img src="./images/friend1.jpg" alt="first friend"/>
+                        <span class="name">Markus</span>
+                        <span class="age">19</span>
+                        <span style="display: none;" class="user-id">123456789</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="fallback">Unfortunately there aren't any friends available :/ We're so sorry.</div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
