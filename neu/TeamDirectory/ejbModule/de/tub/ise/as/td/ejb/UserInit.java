@@ -16,13 +16,13 @@ public class UserInit {
 
 	@PostConstruct
 	public void ensureUsersExist() {
-		User user = new User("Peter", 32, "Schütze", "WInf");
+		User user = new User("Peter", 32, "Schütze", "WInf", "./images/Peter.jpg");
 		em.persist(user);
-		user = new User("Dennis", 18, "Skorpion", "Physik");
+		user = new User("Dennis", 18, "Skorpion", "Physik", "./images/Dennis.jpg");
 		em.persist(user);
-		user = new User("Chris", 21, "Löwe", "WInf");
+		user = new User("Chris", 21, "Löwe", "WInf", "./images/Chris.jpg");
 		em.persist(user);
-		user = new User("Markus", 19, "Löwe", "WInf");
+		user = new User("Markus", 19, "Löwe", "WInf", "./images/Markus.jpg");
 		em.persist(user);
 	}
 }

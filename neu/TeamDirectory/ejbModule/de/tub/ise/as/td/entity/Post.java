@@ -1,8 +1,3 @@
-//----------------------------------------------------
-// 20.06.2018 - Carloss
-// Instanzvariablen, Getter, Setter, Constructor
-
-
 package de.tub.ise.as.td.entity;
 
 import java.io.Serializable;
@@ -68,6 +63,3 @@ public class Post implements Serializable {
 	}
 	
 }
-
-
-//20.06.2018 - Carloss ENDE-----------------------------------------------------

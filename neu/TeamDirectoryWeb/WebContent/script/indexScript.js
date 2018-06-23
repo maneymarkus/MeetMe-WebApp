@@ -8,6 +8,8 @@ var Module = (function(window, document, undefined) {
             g = d.getElementsByTagName('body')[0];
 
         var windowWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+        
+        var usersUrl = "http://localhost:8080/TeamDirectoryWeb/api/user/users";
 
         var friends = document.getElementsByClassName("friends")[0];
         var friendsButton = document.getElementsByClassName("show-friends")[0];
@@ -21,6 +23,68 @@ var Module = (function(window, document, undefined) {
         friendsClose.addEventListener("click", showFriends);
         friendsWrapper.addEventListener("click", showUser);
 
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            	displayUsers(this.responseText);
+            }
+        }
+        xhttp.open("GET", usersUrl, true);
+        xhttp.send();
+               
+        function displayUsers(response) {
+        	jsonResponse = JSON.parse(response);
+        	var counter = 1;
+        	if (jsonResponse == "") {
+        		document.getElementsByClassName("fallback")[0];
+        		return;
+        	}
+        	for (var key in jsonResponse) {
+        		userObject = jsonResponse[key];
+        		var friendContainer = document.createElement("div");
+        		friendContainer.classList.add("friend-container", "friend-" + counter);
+        		var linkUser = document.createElement("a");
+        		linkUser.setAttribute("href", "./user.html");
+        		var imageUser = document.createElement("img");
+        		
+        		/*
+        		 * 
+        		 * Has to be changed
+        		 * 
+        		 */
+        		
+        		imageUser.setAttribute("src", "./images/friend1.jpg");
+        		
+        		//imageUser.setAttribute("src", userObject.imagePath);
+        		
+        		/*
+        		 * 
+        		 * 
+        		 * 
+        		 */
+        		
+        		imageUser.setAttribute("alt", "Here comes text to display when image can't be displayed.");
+        		var nameSpan = document.createElement("span");
+        		nameSpan.classList.add("name");
+        		nameSpan.innerHTML = userObject.name;
+        		var ageSpan = document.createElement("span");
+        		ageSpan.classList.add("age");
+        		ageSpan.innerHTML = userObject.age;
+        		var idSpan = document.createElement("span");
+        		idSpan.classList.add("user-id");
+        		idSpan.style.display = "none";
+        		idSpan.innerHTML = userObject.id;
+        		linkUser.appendChild(imageUser);
+        		linkUser.appendChild(nameSpan);
+        		linkUser.appendChild(ageSpan);
+        		linkUser.appendChild(idSpan);
+        		friendContainer.appendChild(linkUser);
+        		friendsWrapper.appendChild(friendContainer);
+        		counter++;
+        	}
+        	friendsButton.removeAttribute("disabled");
+        }
+        
         function getFriendContainersCoords() {
             for (i = 0; i < friendContainers.length; i++) {
                 var friendRect = friendContainers[i].getBoundingClientRect();

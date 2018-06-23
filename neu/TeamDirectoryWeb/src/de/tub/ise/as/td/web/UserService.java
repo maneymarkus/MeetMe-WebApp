@@ -1,5 +1,6 @@
 package de.tub.ise.as.td.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -46,15 +47,16 @@ public class UserService {
         return jsonb.toJson("hallo");
     }
     */
-    /*
-    @GET
+    
+    @GET 
+    @Path("/users")
     @Produces("application/json")
-    public String getUser(int id) {
-    	User user = userMgmt.getUser(id);
+    public String getUsers() { 
+    	List<User> users = userMgmt.getUsers();
     	Jsonb jsonb = JsonbBuilder.create();
-    	return jsonb.toJson(user);
+    	return jsonb.toJson(users);
     }
-    */
+
     @GET
     @Produces("application/json")
     public String getUser(@QueryParam("userId") String userId) {
@@ -64,6 +66,7 @@ public class UserService {
     			+ "\"age\":\"" + user.getAge() + "\","
     			+ "\"starsign\":\"" + user.getStarsign() + "\","
     			+ "\"course\":\"" + user.getCourse() + "\","
+    			+ "\"imagePath\":\"" + user.getImagePath() + "\","
     			+ "\"postings\":[";
     	try {
     		System.out.println("starting");

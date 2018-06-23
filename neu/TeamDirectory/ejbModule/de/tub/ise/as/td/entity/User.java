@@ -18,6 +18,7 @@ public class User implements Serializable {
 	String name;
 	String starsign;
 	String course;
+	String imagePath;
 	
 	public User() {
 		super();
@@ -40,6 +41,19 @@ public class User implements Serializable {
 	public User(String name, int age, String starsign, String course) {
 		this(name, starsign, course);
 		this.age = age;
+	}
+	
+	public User(String name, int age, String starsign, String course, String imagePath) {
+		this(name, age, starsign, course);
+		this.imagePath = imagePath;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 	
 	public int getAge() {

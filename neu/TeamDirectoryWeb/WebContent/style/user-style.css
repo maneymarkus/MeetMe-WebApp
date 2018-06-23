@@ -33,6 +33,23 @@ body {
     background-color: cornflowerblue;
 }
 
+.home-link {
+	position: absolute;
+	left: 50%;
+	top: -4em;
+	transform: translateX(-50%);
+	color: darkblue;
+	transition: color 0.3s;
+}
+
+.home-link i {
+	font-size: 2.5em;
+}
+
+.home-link:hover {
+	color: white;
+}
+
 .wrapper {
     position: relative;
     margin: 0 auto;

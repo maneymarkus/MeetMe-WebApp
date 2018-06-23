@@ -29,8 +29,7 @@ var Module = (function(window, document, undefined) {
             var ageEl = document.getElementById("age");
             var starsignEl = document.getElementById("starsign");
             var courseEl = document.getElementById("course");
-            var imgEl = document.getElementById("user-image")
-            var imagePath = "../images/" + userId + ".jpg";
+            var imgEl = document.getElementById("user-image");
 
             var jsonResponse = JSON.parse(response);
 
@@ -38,7 +37,7 @@ var Module = (function(window, document, undefined) {
             ageEl.innerHTML = jsonResponse.age;
             starsign.innerHTML = jsonResponse.starsign;
             courseEl.innerHTML = jsonResponse.course;
-            imgEl.src = imagePath;
+            imgEl.src = jsonResponse.imagePath;
 
             var postings = jsonResponse.postings;
             
