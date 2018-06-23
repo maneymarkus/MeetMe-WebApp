@@ -28,6 +28,19 @@ public class PostManagement {
 		return query.getResultList();
 	}
 	
+	// Chris Anfang
+	public Post getPost(String name) {
+		TypedQuery<Post> query = em.createQuery("SELECT p FROM Post p WHERE p.author = '" + name + "'", Post.class);
+		return query.getSingleResult();
+		//return query.getResultList().get(0);
+	}
+	
+	// JPA: Einfügen nicht per JPQL sondern per EntityManager ?!
+//	public Post setPost() {
+//		TypedQuery<Post> query = em.createQuery("", Post.class);
+//	}
+	// Chris Ende
+	
 }
 
 
